@@ -103,6 +103,22 @@ class CommandHandlerTest {
         System.out.println("Expected Output: " + expectedOutput);
         assertEquals(expectedOutput, actualOutput, "The printed status should match the expected position and state.");
     }
+
+    @Test
+    void testTurnRobotRight1() {
+        commandHandler.handleCommand("I 10");
+        commandHandler.handleCommand("R");
+        commandHandler.handleCommand("R");
+        commandHandler.handleCommand("C");
+
+        System.out.flush();
+        String actualOutput = outputStreamCaptor.toString().trim();
+        String expectedOutput = "Position: 0, 0 - Pen: up - Facing: south";
+
+        System.out.println("Actual Output: " + actualOutput);
+        System.out.println("Expected Output: " + expectedOutput);
+        assertEquals(expectedOutput, actualOutput, "The printed status should match the expected position and state.");
+    }
     // TC-3-2: Move forward and turn left
     @Test
     void testMoveForwardAndTurnLeft() {
