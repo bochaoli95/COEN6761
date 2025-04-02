@@ -35,7 +35,6 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.8</version>
                 <executions>
-                    <!-- 1. 准备 JaCoCo Agent -->
                     <execution>
                         <id>prepare-agent</id>
                         <goals>
@@ -43,7 +42,6 @@
                         </goals>
                     </execution>
 
-                    <!-- 2. 生成覆盖率报告 -->
                     <execution>
                         <id>report</id>
                         <phase>verify</phase>
