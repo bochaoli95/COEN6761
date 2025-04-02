@@ -12,19 +12,19 @@ public class CommandHandler {
         commandsHistory = new ArrayList<>();
     }
 
-    public CommandHandler(Integer size) {
-        this.robot = new Robot(size);
-        commandsHistory = new ArrayList<>();
-    }
+//    public CommandHandler(Integer size) {
+//        this.robot = new Robot(size);
+//        commandsHistory = new ArrayList<>();
+//    }
 
 
     public Robot getRobot() {
         return robot;
     }
 
-    public void setRobot(Robot robot) {
-        this.robot = robot;
-    }
+//    public void setRobot(Robot robot) {
+//        this.robot = robot;
+//    }
 
     public void handleCommand(String command) {
         commandsHistory.add(command);

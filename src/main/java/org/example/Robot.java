@@ -23,8 +23,12 @@ public class Robot {
         ui = new RobotUI(this, size);
     }
 
-    public boolean isPenDown(){
-         return penDown;
+    public int getSize() {
+        return size;
+    }
+
+    public boolean isPenDown() {
+        return penDown;
     }
 
     public int[][] getMap() {
@@ -96,8 +100,10 @@ public class Robot {
             }
         });
     }
-    public void updateUI() { ui.updateUI(); }
 
+    public void updateUI() {
+        ui.updateUI();
+    }
 
 
 }

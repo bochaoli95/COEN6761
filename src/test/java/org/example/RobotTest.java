@@ -15,7 +15,15 @@ public class RobotTest {
     }
 
     @Test
-    public void testInitialPosition() {
+    public void testInitialPosition1() {
+        assertEquals(0, robot.getX());
+        assertEquals(0, robot.getY());
+        assertEquals(DirectionEnum.NORTH, robot.getDirection());
+        assertFalse(robot.isPenDown());
+    }
+    @Test
+    public void testInitialPosition2() {
+        robot = new Robot(4);
         assertEquals(0, robot.getX());
         assertEquals(0, robot.getY());
         assertEquals(DirectionEnum.NORTH, robot.getDirection());
