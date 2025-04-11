@@ -3,6 +3,7 @@ package org.example;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static com.github.stefanbirkner.systemlambda.SystemLambda.catchSystemExit;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
@@ -197,7 +198,7 @@ class CommandHandlerTest {
         System.out.flush();
         String output = outputStreamCaptor.toString();
         String expectedMap =
-                        "     " + "\n" +
+                "     " + "\n" +
                         "**** " + "\n" +
                         "*    " + "\n" +
                         "*    " + "\n" +
@@ -278,5 +279,12 @@ class CommandHandlerTest {
         String output = outputStreamCaptor.toString().trim();
         System.out.flush();
         assertTrue(output.contains("Invalid command."), "Output should contain 'Invalid command.'");
+    }
+    @Test
+    void testQuitCommand() throws Exception {
+        int statusCode = catchSystemExit(() -> {
+            commandHandler.handleCommand("Q");
+        });
+        assert (statusCode == 0);
     }
 }

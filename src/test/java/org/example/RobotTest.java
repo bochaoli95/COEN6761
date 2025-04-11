@@ -31,6 +31,43 @@ public class RobotTest {
     }
 
     @Test
+    public void testBoundary3() {
+        robot = new Robot(4);
+        robot.turnRight();
+        robot.move(10);
+        assertEquals(3, robot.getX());
+        assertEquals(0, robot.getY());
+        assertEquals(DirectionEnum.EAST, robot.getDirection());
+        assertFalse(robot.isPenDown());
+    }
+    @Test
+    public void testBoundary4() {
+        robot = new Robot(4);
+        robot.turnRight();
+        robot.turnRight();
+        robot.move(10);
+        assertEquals(0, robot.getX());
+        assertEquals(0, robot.getY());
+        assertEquals(DirectionEnum.SOUTH, robot.getDirection());
+        assertFalse(robot.isPenDown());
+    }
+
+    @Test
+    public void testBoundary5() {
+        robot = new Robot(4);
+        robot.move(3);
+        robot.turnRight();
+        robot.turnRight();
+        robot.move(2);
+        assertEquals(0, robot.getX());
+        assertEquals(1, robot.getY());
+        assertEquals(DirectionEnum.SOUTH, robot.getDirection());
+        assertFalse(robot.isPenDown());
+    }
+
+
+
+    @Test
     public void testPenUpAndDown() {
         robot.downPen();
         assertTrue(robot.isPenDown());
